@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyApplication2.0</string>
+    <string name="view_my_con">VIEW MY CONTACTS</string>
+    <string name="setting">Setting</string>
+    <string name="user_name">User Name</string>
+    <string name="career">Career</string>
+    <string name="User_address">Address</string>
+    <string name="edit">Edit profile</string>
+
+
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="fill_profile">Fill out the profile and go to the application!</string>
+    <string name="acquaintance">Let\'s get acquainted</string>
+    <string name="remember_me">Remember me</string>
+    <string name="or">or</string>
+    <string name="register">REGISTER</string>
+    <string  name="login">LOGIN</string>
+    <string name="invitation_to_register">By clicking Register you agree to our Terms &#10; and Conditions</string>
+    <string name="is_have_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="required">Required</string>
+</resources>

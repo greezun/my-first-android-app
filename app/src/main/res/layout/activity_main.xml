@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:constraint_referenced_ids=" userName, career, address"
+            app:flow_horizontalGap="@dimen/margin_min"
+            app:flow_verticalGap="@dimen/margin_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_photo"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+        </androidx.constraintlayout.helper.widget.Flow>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/setting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:textAppearance="@style/big_text"
+            android:layout_marginStart="@dimen/margin_mid"
+            android:layout_marginTop="@dimen/margin_mid">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textAppearance="@style/big_text"
+
+            tools:ignore="MissingConstraints">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/career"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/career"
+            android:textAppearance="@style/service_text"
+            tools:ignore="MissingConstraints">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/User_address"
+            android:textAppearance="@style/service_text"
+            tools:ignore="MissingConstraints">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="360dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/user_info">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/picture"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_view_my_con"
+            style="@style/button_basic"
+            android:layout_marginStart="@dimen/margin_mid"
+            android:layout_marginEnd="@dimen/margin_mid"
+            android:layout_marginBottom="@dimen/margin_min"
+            android:background="@drawable/button_basic_background"
+            android:text="@string/view_my_con"
+            android:textAppearance="@style/basic_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="onClickGoMine"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit"
+            style="@style/button_auxiliary"
+            android:layout_marginStart="@dimen/margin_mid"
+            android:layout_marginEnd="@dimen/margin_mid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
+            android:layout_marginBottom="@dimen/margin_mid"
+            android:text="@string/edit"
+            android:textAppearance="@style/edit"
+
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_view_fb_background" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_view_insta_background"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_view_linked_in_backgraund"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="button3, button4, button5"
+            app:flow_horizontalGap="@dimen/margin_max"
+            app:flow_verticalGap="@dimen/margin_max"
+            app:layout_constraintBottom_toTopOf="@id/edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

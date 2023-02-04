@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_mid">16dp</dimen>
+    <dimen name="margin_min">8dp</dimen>
+    <dimen name="button_height_standard">55dp</dimen>
+    <dimen name="button_height_auxiliary">40dp</dimen>
+    <dimen name="margin_max">32dp</dimen>
+</resources>
