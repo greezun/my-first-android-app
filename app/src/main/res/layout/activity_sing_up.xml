@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_min"
-        android:gravity="center_horizontal|top"
+        android:gravity="center"
         android:text="@string/invitation_to_register"
         android:textAppearance="@style/small_service_text"
         app:layout_constraintBottom_toTopOf="@id/enter_block"
@@ -112,7 +112,7 @@
         app:counterMaxLength="16"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
-        app:helperText="@string/required"
+        app:helperText=""
         app:helperTextTextColor="@color/red"
         tools:ignore="MissingConstraints">
 
@@ -136,9 +136,7 @@
         android:textColorHint="@color/gray"
         app:boxStrokeColor="@color/purple_500"
         app:errorEnabled="true"
-        app:helperText="@string/required"
-
-
+        app:helperText=""
         app:helperTextTextColor="@color/red"
         tools:ignore="MissingConstraints">
 
@@ -170,7 +168,7 @@
     </androidx.constraintlayout.helper.widget.Flow>
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/check"
+        android:id="@+id/checkBox"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -179,6 +177,7 @@
         android:checked="true"
         android:text="@string/remember_me"
         android:textAppearance="@style/service_text"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordContainer">
 

@@ -16,7 +16,7 @@
     <string name="or">or</string>
     <string name="register">REGISTER</string>
     <string  name="login">LOGIN</string>
-    <string name="invitation_to_register">By clicking Register you agree to our Terms &#10; and Conditions</string>
+    <string name="invitation_to_register">By clicking Register you agree to our Terms &#13; and Conditions</string>
     <string name="is_have_account">Already have an account?</string>
     <string name="sign_in">Sign in</string>
     <string name="required">Required</string>
