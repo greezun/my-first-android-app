@@ -21,7 +21,7 @@ class SingUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySingUpBinding
 
-    lateinit var eMail: TextInputEditText
+    private lateinit var eMail: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySingUpBinding.inflate(layoutInflater)
@@ -113,10 +113,9 @@ class SingUpActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.zoom_in, R.anim.static_animation)
             if (binding.checkBox.isChecked) saveLoginData()
         }
-
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
+
     private fun saveLoginData() {
         login = binding.eMailField.text.toString()
         password = binding.passwordField.text.toString()

@@ -103,8 +103,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordContainer"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
+        app:boxStrokeColor="@color/outline_custom_color"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:textColorHint="@color/gray"
@@ -130,11 +131,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/eMailContainer"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColorHint="@color/gray"
-        app:boxStrokeColor="@color/purple_500"
+        app:boxStrokeColor="@color/outline_custom_color"
         app:errorEnabled="true"
         app:helperText=""
         app:helperTextTextColor="@color/red"
