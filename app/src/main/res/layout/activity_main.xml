@@ -10,7 +10,7 @@
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/dark_blue"
+        android:background="@color/primary_background_color"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"

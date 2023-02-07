@@ -14,8 +14,8 @@
     <string name="acquaintance">Let\'s get acquainted</string>
     <string name="remember_me">Remember me</string>
     <string name="or">or</string>
-    <string name="register">REGISTER</string>
-    <string  name="login">LOGIN</string>
+    <string name="register">register</string>
+    <string  name="login">login</string>
     <string name="invitation_to_register">By clicking Register you agree to our Terms &#13; and Conditions</string>
     <string name="is_have_account">Already have an account?</string>
     <string name="sign_in">Sign in</string>
