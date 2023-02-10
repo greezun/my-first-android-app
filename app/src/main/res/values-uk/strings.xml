@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyApplication2.0</string>
+    <string name="view_my_con">мої контакти</string>
+    <string name="setting">Налаштування</string>
+    <string name="user_name">Ім\'я користувача</string>
+    <string name="career">Студет Ш++</string>
+    <string name="User_address">Полтава</string>
+    <string name="edit">Редагувати профіль</string>
+
+
+    <string name="e_mail">E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="fill_profile">Заповніть профіль і перейдіть до програми!</string>
+    <string name="acquaintance">Давайте знайомитись!</string>
+    <string name="remember_me">запам\'ятати мене</string>
+    <string name="or">або</string>
+    <string name="register">зареєструватись</string>
+    <string name="login">увійти</string>
+    <string name="invitationToRegister">Натиснувши зареєструватись, ви погоджуєтесь з нашими правилами та умовами</string>
+    <string name="is_have_account">Вже є аккаунт?</string>
+    <string name="sign_in">Увійти</string>
+    <string name="required">Вимагається</string>
+</resources>

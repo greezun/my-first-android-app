@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    tools:context=".AuthActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login"
+        style="@style/button_login_register"
+        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginEnd="@dimen/margin_mid"
+
+        android:onClick="onClickGoMine"
+        android:text="@string/login"
+        app:layout_constraintBottom_toTopOf="@id/invitationToRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/invitationToRegister"
+        style="@style/TextView"
+
+        android:text="@string/invitationToRegister"
+        android:textAppearance="@style/Text.Secondary.SmallServiceText"
+        app:layout_constraintBottom_toTopOf="@id/enter_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/have_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_have_account"
+        android:textAppearance="@style/Text.Secondary.ServiceText"
+
+        tools:ignore="MissingConstraints">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:textAppearance="@style/Text.Secondary.ServiceText"
+        android:textColor="@color/clicable_text_color"
+        android:clickable="true"
+        android:focusable="true"
+
+        tools:ignore="MissingConstraints"
+        >
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/enter_block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:layout_marginBottom="@dimen/margin_min"
+        app:constraint_referenced_ids="have_account, signIn"
+        app:flow_horizontalGap="@dimen/margin_mid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+
+    </androidx.constraintlayout.helper.widget.Flow>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_google"
+        style="@style/button_google"
+        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginEnd="@dimen/margin_mid"
+
+        app:layout_constraintBottom_toTopOf="@id/or"
+        app:layout_constraintTop_toBottomOf="@id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/or"
+        style="@style/TextView"
+
+        android:text="@string/or"
+        android:textAppearance="@style/Text.Primary.HeadlineSmall"
+        app:layout_constraintBottom_toTopOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@id/button_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordContainer"
+        style="@style/TextInputEditLayout"
+        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:gravity="center"
+        android:hint="@string/password"
+        app:counterMaxLength="16"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/outline_custom_color"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordField"
+            style="@style/TextInputEditText"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:background="@color/primary_background_color"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/eMailContainer"
+        style="@style/TextInputEditLayout"
+        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eMailField"
+            style="@style/TextInputEditText"
+            android:hint="@string/e_mail"
+            android:background="@color/primary_background_color"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/field_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginEnd="@dimen/margin_mid"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="eMailContainer, passwordContainer"
+        app:flow_verticalGap="@dimen/margin_min"
+        app:layout_constraintBottom_toTopOf="@id/button_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.helper.widget.Flow>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBox"
+        style="@style/CheckBox"
+        android:layout_marginStart="@dimen/margin_mid"
+        android:backgroundTintMode="multiply"
+        android:checked="true"
+        android:text="@string/remember_me"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordContainer">
+
+    </androidx.appcompat.widget.AppCompatCheckBox>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fill_profile"
+        style="@style/TextView"
+
+        android:text="@string/fill_profile"
+        android:textAppearance="@style/Text.Secondary.ServiceText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acquaintance">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/acquaintance"
+        style="@style/TextView"
+        android:layout_marginTop="@dimen/margin_min"
+        android:text="@string/acquaintance"
+        android:textAppearance="@style/Text.Primary.HeadlineSmall"
+        app:layout_constraintBottom_toTopOf="@id/field_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

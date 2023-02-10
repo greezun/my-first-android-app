@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting"
-            android:textAppearance="@style/big_text"
+            android:textAppearance="@style/Text.Primary.HeadlineSmall"
             android:layout_marginStart="@dimen/margin_mid"
             android:layout_marginTop="@dimen/margin_mid">
 
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
-            android:textAppearance="@style/big_text"
+            android:textAppearance="@style/Text.Primary.LabelLarge"
 
             tools:ignore="MissingConstraints">
 
@@ -64,7 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/career"
-            android:textAppearance="@style/service_text"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
+
             tools:ignore="MissingConstraints">
 
         </androidx.appcompat.widget.AppCompatTextView>
@@ -72,8 +73,9 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_max"
             android:text="@string/User_address"
-            android:textAppearance="@style/service_text"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
             tools:ignore="MissingConstraints">
 
         </androidx.appcompat.widget.AppCompatTextView>
@@ -81,8 +83,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/user_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
             app:cardCornerRadius="360dp"
             tools:ignore="MissingConstraints"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +96,7 @@
                 android:id="@+id/picture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/picture"
+                android:src="@drawable/avatar"
 
                 />
         </androidx.cardview.widget.CardView>
@@ -117,9 +119,9 @@
             android:layout_marginStart="@dimen/margin_mid"
             android:layout_marginEnd="@dimen/margin_mid"
             android:layout_marginBottom="@dimen/margin_min"
-            android:background="@drawable/button_basic_background"
+            android:background="@drawable/button_basic"
             android:text="@string/view_my_con"
-            android:textAppearance="@style/basic_button_text"
+            android:textAppearance="@style/Text.Primary.ButtonText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,30 +137,38 @@
             app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
             android:layout_marginBottom="@dimen/margin_mid"
             android:text="@string/edit"
-            android:textAppearance="@style/edit"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
+            android:textColor="@color/auxiliary_button_text_color"
 
             >
 
         </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/button3"
+            android:id="@+id/buttonFB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_fb_background" />
+            android:src="@drawable/image_view_fb"
+            android:clickable="true"
+            android:focusable="true"
+            tools:ignore="MissingConstraints"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/button4"
+            android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_insta_background"
+            android:src="@drawable/image_view_insta"
+            android:clickable="true"
+            android:focusable="true"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/button5"
+            android:id="@+id/buttonLinkedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_linked_in_backgraund"
+            android:src="@drawable/image_view_linked_in"
+            android:clickable="true"
+            android:focusable="true"
             tools:ignore="MissingConstraints" />
 
 
@@ -166,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:constraint_referenced_ids="button3, button4, button5"
+            app:constraint_referenced_ids="buttonFB, buttonInsta, buttonLinkedIn"
             app:flow_horizontalGap="@dimen/margin_max"
             app:flow_verticalGap="@dimen/margin_max"
             app:layout_constraintBottom_toTopOf="@id/edit"

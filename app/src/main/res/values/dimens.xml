@@ -5,4 +5,5 @@
     <dimen name="button_height_standard">55dp</dimen>
     <dimen name="button_height_auxiliary">40dp</dimen>
     <dimen name="margin_max">32dp</dimen>
+    <dimen name="avatar_size">113dp</dimen>
 </resources>

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import com.example.myapplication20.databinding.ActivityMainBinding
 import java.util.*
 
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickGoMine(view: View){
-        val intent = Intent(this, SingUpActivity::class.java )
+        val intent = Intent(this, AuthActivity::class.java )
         startActivity(intent)
 
     }
