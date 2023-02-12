@@ -3,47 +3,82 @@ package com.example.myapplication20
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import androidx.lifecycle.asLiveData
 import com.example.myapplication20.databinding.ActivityAuthBinding
-
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+
 
 
 class AuthActivity : AppCompatActivity() {
 
-    lateinit var loginData: LoginData
-    var login = ""
-    var password = ""
-
+    private lateinit var loginData: LoginData
     private lateinit var binding: ActivityAuthBinding
-
     private lateinit var eMail: TextInputEditText
+    private lateinit var coroutineScope: CoroutineScope
+    private lateinit var intent: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAuthBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        coroutineScope = CoroutineScope(Job())
         loginData = LoginData(this)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        observeData()
+        setContentView(binding.root)
         emailFocusListener()
         passwordFocusListener()
-        observeData()
+        autoLogIn()
 
     }
 
-    private fun observeData() {
 
+    private fun autoLogIn() {
+
+        Log.i("myLog", "start autologin")
+        Log.i("myLog", "isValid - ${isValid()}")
+        if (isValid()) {
+            intentInit()
+            goNextActivity()
+        }
+
+
+    }
+
+    private fun goNextActivity() {
+        startActivity(intent)
+        overridePendingTransition(R.anim.zoom_in, R.anim.static_animation)
+    }
+
+    private fun intentInit() {
+        eMail = binding.eMailField
+        intent = Intent(this, MainActivity::class.java)
+            .apply {
+                putExtra("key", eMail.text.toString())
+            }
+    }
+
+
+    private fun observeData() {
+        Log.i("myLog", "observeData start")
         loginData.loginFlow.asLiveData().observe(this, {
             binding.eMailField.setText(it.toString())
+            Log.i("myLog", "e-mail: $it")
         })
 
         loginData.passwordFlow.asLiveData().observe(this, {
             binding.passwordField.setText(it.toString())
+
+            Log.i("myLog", "pass: $it")
         })
 
-
+        loginData.autoLoginFlow.asLiveData().observe(this, {
+            if (it) autoLogIn()
+        })
     }
 
 
@@ -99,26 +134,20 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun onClickGoMine(view: View) {
-        eMail = binding.eMailField
-        val intent = Intent(this, MainActivity::class.java)
-            .apply {
-                putExtra("key", eMail.text.toString())
-            }
-
+        intentInit()
         if (isValid()) {
-            startActivity(intent)
-            overridePendingTransition(R.anim.zoom_in, R.anim.static_animation)
+            goNextActivity()
             if (binding.checkBox.isChecked) saveLoginData()
         }
     }
 
-
     private fun saveLoginData() {
-        login = binding.eMailField.text.toString()
-        password = binding.passwordField.text.toString()
+        val login = binding.eMailField.text.toString()
+        val password = binding.passwordField.text.toString()
+        val isAutoLogin = true
 
-        GlobalScope.launch {
-            loginData.storeUser(login, password)
+        coroutineScope.launch {
+            loginData.storeLoginData(login, password, isAutoLogin)
         }
     }
 }

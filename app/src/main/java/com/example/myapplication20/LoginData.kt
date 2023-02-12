@@ -13,12 +13,14 @@ class LoginData (context : Context) {
     companion object{
         val USER_LOGIN_KEY = preferencesKey<String>("USER_LOGIN")
         val USER_PASSWORD_KEY = preferencesKey<String>("USER_PASSWORD")
+        val AUTOLOGIN_KEY = preferencesKey<Boolean>("AUTOLOGIN")
     }
 
-    suspend fun storeUser(login:String, password:String){
+    suspend fun storeLoginData(login:String, password:String, isAutologin: Boolean){
         dataStore.edit {
             it[USER_LOGIN_KEY] = login
             it[USER_PASSWORD_KEY] = password
+            it[AUTOLOGIN_KEY] = isAutologin
         }
     }
 
@@ -30,7 +32,9 @@ class LoginData (context : Context) {
         it[USER_PASSWORD_KEY]?:""
     }
 
-
+    val autoLoginFlow: Flow<Boolean> = dataStore.data.map {
+        it[AUTOLOGIN_KEY]?:false
+    }
 
 
 }

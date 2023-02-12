@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_in"
         android:textAppearance="@style/Text.Secondary.ServiceText"
-        android:textColor="@color/clicable_text_color"
+        android:textColor="@color/clickable_text_color"
         android:clickable="true"
         android:focusable="true"
 
