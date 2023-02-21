@@ -14,7 +14,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 
-
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var loginData: LoginData
@@ -36,7 +35,6 @@ class AuthActivity : AppCompatActivity() {
 
     }
 
-
     private fun autoLogIn() {
 
         Log.i("myLog", "start autologin")
@@ -45,8 +43,6 @@ class AuthActivity : AppCompatActivity() {
             intentInit()
             goNextActivity()
         }
-
-
     }
 
     private fun goNextActivity() {
@@ -64,16 +60,12 @@ class AuthActivity : AppCompatActivity() {
 
 
     private fun observeData() {
-        Log.i("myLog", "observeData start")
         loginData.loginFlow.asLiveData().observe(this, {
             binding.eMailField.setText(it.toString())
-            Log.i("myLog", "e-mail: $it")
         })
 
         loginData.passwordFlow.asLiveData().observe(this, {
             binding.passwordField.setText(it.toString())
-
-            Log.i("myLog", "pass: $it")
         })
 
         loginData.autoLoginFlow.asLiveData().observe(this, {

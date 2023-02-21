@@ -14,7 +14,6 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -85,7 +84,7 @@
             android:id="@+id/user_photo"
             android:layout_width="@dimen/avatar_size"
             android:layout_height="@dimen/avatar_size"
-            app:cardCornerRadius="360dp"
+            app:cardCornerRadius="@dimen/main_avatar_radius"
             tools:ignore="MissingConstraints"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,10 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/avatar"
-
                 />
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -125,22 +122,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="onClickGoMine"/>
+            tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary"
             android:layout_marginStart="@dimen/margin_mid"
             android:layout_marginEnd="@dimen/margin_mid"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
             android:layout_marginBottom="@dimen/margin_mid"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
             android:textColor="@color/auxiliary_button_text_color"
-
-            >
+            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -148,28 +144,32 @@
             android:id="@+id/buttonFB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_fb"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints"/>
+            android:src="@drawable/image_view_fb"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_insta"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints" />
+            android:src="@drawable/image_view_insta"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="93dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonLinkedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_linked_in"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints" />
+            android:src="@drawable/image_view_linked_in"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="268dp"
+            tools:layout_editor_absoluteY="93dp" />
 
 
         <androidx.constraintlayout.helper.widget.Flow

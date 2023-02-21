@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        />
+        tools:ignore="TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/invitationToRegister"
@@ -48,14 +48,15 @@
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/sign_in"
         android:textAppearance="@style/Text.Secondary.ServiceText"
         android:textColor="@color/clickable_text_color"
-        android:clickable="true"
-        android:focusable="true"
 
-        tools:ignore="MissingConstraints"
-        >
+        tools:ignore="MissingConstraints,VisualLintOverlap,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="436dp"
+        tools:layout_editor_absoluteY="384dp">
 
     </androidx.appcompat.widget.AppCompatTextView>
 
@@ -78,14 +79,15 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_google"
         style="@style/button_google"
+        android:layout_height="48dp"
         android:layout_marginStart="@dimen/margin_mid"
-        android:layout_marginEnd="@dimen/margin_mid"
 
+        android:layout_marginEnd="@dimen/margin_mid"
         app:layout_constraintBottom_toTopOf="@id/or"
-        app:layout_constraintTop_toBottomOf="@id/checkBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@id/checkBox"
+        tools:ignore="MissingConstraints,VisualLintButtonSize,SpeakableTextPresentCheck">
 
     </androidx.appcompat.widget.AppCompatButton>
 
@@ -116,10 +118,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordField"
             style="@style/TextInputEditText"
+            android:background="@color/primary_background_color"
             android:inputType="textPassword"
             android:maxLength="16"
-            android:background="@color/primary_background_color"
-            tools:ignore="VisualLintTextFieldSize" />
+            tools:ignore="VisualLintTextFieldSize,TextSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,10 +136,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/eMailField"
             style="@style/TextInputEditText"
-            android:hint="@string/e_mail"
             android:background="@color/primary_background_color"
+            android:hint="@string/e_mail"
             android:inputType="textEmailAddress"
-            tools:ignore="VisualLintTextFieldSize" />
+            tools:ignore="VisualLintTextFieldSize,TextSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

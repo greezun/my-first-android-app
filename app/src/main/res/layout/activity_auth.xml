@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        tools:ignore="UsingOnClickInXml,TextSizeCheck" />
+        tools:ignore="UsingOnClickInXml,TextSizeCheck,VisualLintButtonSize" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/invitationToRegister"
@@ -39,22 +39,19 @@
         android:layout_height="wrap_content"
         android:text="@string/is_have_account"
         android:textAppearance="@style/Text.Secondary.ServiceText"
-
-        tools:ignore="MissingConstraints">
-
+        tools:ignore="MissingConstraints,VisualLintOverlap">
     </androidx.appcompat.widget.AppCompatTextView>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/sign_in"
         android:textAppearance="@style/Text.Secondary.ServiceText"
         android:textColor="@color/clickable_text_color"
-        android:clickable="true"
-        android:focusable="true"
-
-        tools:ignore="MissingConstraints"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,VisualLintOverlap"
         >
 
     </androidx.appcompat.widget.AppCompatTextView>
@@ -84,7 +81,7 @@
         app:layout_constraintBottom_toTopOf="@id/or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintButtonSize">
 
     </androidx.appcompat.widget.AppCompatButton>
 
@@ -119,7 +116,7 @@
             android:background="@color/primary_background_color"
             android:inputType="textPassword"
             android:maxLength="@integer/passwordLength"
-             />
+            tools:ignore="VisualLintTextFieldSize,TextSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

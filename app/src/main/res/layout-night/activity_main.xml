@@ -112,21 +112,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="onClickGoMine"/>
+            tools:ignore="UsingOnClickInXml,TextSizeCheck,TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary_night"
             android:layout_marginStart="@dimen/margin_mid"
             android:layout_marginEnd="@dimen/margin_mid"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
             android:layout_marginBottom="@dimen/margin_mid"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
+            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
-            >
+            tools:ignore="TouchTargetSizeCheck">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -134,28 +134,32 @@
             android:id="@+id/buttonFB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_fb"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints"/>
+            android:src="@drawable/image_view_fb"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_insta"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints" />
+            android:src="@drawable/image_view_insta"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="460dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonLinkedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_view_linked_in"
             android:clickable="true"
             android:focusable="true"
-            tools:ignore="MissingConstraints" />
+            android:src="@drawable/image_view_linked_in"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="268dp"
+            tools:layout_editor_absoluteY="460dp" />
 
 
         <androidx.constraintlayout.helper.widget.Flow
