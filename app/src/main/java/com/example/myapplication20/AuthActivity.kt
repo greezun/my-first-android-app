@@ -13,12 +13,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
+private const val s = "key"
+
 //TODO не виконано (або виконано. Скоріше всього, що виконано) опрацювання checkbox "Запам'ятати данні": не важливо від стану, поведінка не змінюється
 //TODO можна не показувати текст помилки про email і password, якщо їх ще не починали вводити.
-class AuthActivity : AppCompatActivity() {
+class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::inflate) {
 
     private lateinit var loginData: LoginData
-    private lateinit var binding: ActivityAuthBinding
+//    private lateinit var binding: ActivityAuthBinding
     private lateinit var eMail: TextInputEditText
     private lateinit var coroutineScope: CoroutineScope
     private lateinit var intent: Intent
@@ -27,9 +29,9 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         coroutineScope = CoroutineScope(Job())
         loginData = LoginData(this)
-        binding = ActivityAuthBinding.inflate(layoutInflater)
+//        binding = ActivityAuthBinding.inflate(layoutInflater)
         observeData()
-        setContentView(binding.root)
+//        setContentView(binding.root)
 //        TODO далі встановлюються два слухачі. Ці дії можна винести у метод setListeners() і тримати усі слухачі у ньому.
         emailFocusListener()
         passwordFocusListener()
@@ -87,7 +89,8 @@ class AuthActivity : AppCompatActivity() {
     private fun validEmail(): String? {
         val emailText = binding.eMailField.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
-            return "Invalid Email Address" //TODO винести у ресурси
+//            return "Invalid Email Address" //TODO винести у ресурси
+            return getString(R.string.checkEmailError)
         }
         return null
     }

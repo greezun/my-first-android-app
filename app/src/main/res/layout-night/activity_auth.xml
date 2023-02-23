@@ -135,7 +135,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/eMailField"
             style="@style/TextInputEditText"
-            android:background="@color/primary_background_color"
+            android:background="#40808080"
             android:hint="@string/e_mail"
             android:inputType="textEmailAddress"
             tools:ignore="TextSizeCheck" />

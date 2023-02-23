@@ -10,6 +10,7 @@
         <item name="colorSecondaryVariant">@color/secondary_color</item>
         <item name="colorOnSecondary">@color/on_secondary_color</item>
         <!-- Status bar color. -->
+<!--        TODO змінити колір на primary_background_color, для кращого вигляду-->
         <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
 

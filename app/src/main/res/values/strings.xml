@@ -20,4 +20,5 @@
     <string name="is_have_account">Already have an account?</string>
     <string name="sign_in">Sign in</string>
     <string name="required">Required</string>
+    <string name="checkEmailError">Invalid Email Address</string>
 </resources>
