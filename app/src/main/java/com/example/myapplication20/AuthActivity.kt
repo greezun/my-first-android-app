@@ -13,7 +13,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-
+//TODO не виконано (або виконано. Скоріше всього, що виконано) опрацювання checkbox "Запам'ятати данні": не важливо від стану, поведінка не змінюється
+//TODO можна не показувати текст помилки про email і password, якщо їх ще не починали вводити.
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var loginData: LoginData
@@ -29,6 +30,7 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         observeData()
         setContentView(binding.root)
+//        TODO далі встановлюються два слухачі. Ці дії можна винести у метод setListeners() і тримати усі слухачі у ньому.
         emailFocusListener()
         passwordFocusListener()
         autoLogIn()
@@ -54,7 +56,7 @@ class AuthActivity : AppCompatActivity() {
         eMail = binding.eMailField
         intent = Intent(this, MainActivity::class.java)
             .apply {
-                putExtra("key", eMail.text.toString())
+                putExtra("key", eMail.text.toString()) // TODO ключ у константи
             }
     }
 
@@ -85,7 +87,7 @@ class AuthActivity : AppCompatActivity() {
     private fun validEmail(): String? {
         val emailText = binding.eMailField.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
-            return "Invalid Email Address"
+            return "Invalid Email Address" //TODO винести у ресурси
         }
         return null
     }
@@ -99,6 +101,8 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun validPassword(): String? {
+        // TODO стрічкові літерали у ресурси
+        // TODO патерни regex'ів у константи
         val passwordText = binding.passwordField.text.toString()
         if (passwordText.length < 8) {
             return "Minimum 8 Character Password"
@@ -125,6 +129,7 @@ class AuthActivity : AppCompatActivity() {
         return validEmail && validPassword
     }
 
+    // TODO можна замінити на onClickListener
     fun onClickGoMine(view: View) {
         intentInit()
         if (isValid()) {

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--TODO кожний із станів теж можна виконати через shape, а не svg-формулу-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"
         android:drawable="@drawable/button_auxiliary_background_pressed" /> <!-- pressed -->

@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var userName = intent.getStringExtra("key")
+        //TODO поки коду мало - нехай буде, але вже можна думати над винесенням логіки обробки данних в окремий метод
+        var userName = intent.getStringExtra("key") //TODO літерал у константи
         if (userName != null) {
             userName = parseMail(userName)
         }
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun parseMail(mail: String): String {
-        val (firstName, secondName) = mail.lowercase().split("@").first().split(".")
+        val (firstName, secondName) = mail.lowercase().split("@").first().split(".") //TODO літерали у константи
         return "${
             firstName.replaceFirstChar { it.titlecase(Locale.getDefault()) }
         } ${secondName.replaceFirstChar { it.titlecase(Locale.getDefault()) }}"

@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    TODO id краще перейменувати, бо зараз назва без сенсового навантаження (русс.: смысловая нагрузка)-->
+<!--    TODO схоже, що layout_constraintHeight_percent="0.5" ні на що не впливає. Можна подивитись на це повідомлення, як альтернативний варіант https://discord.com/channels/534496884849639455/862735944679424020/872180183724085268-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+<!--        TODO id в цілому нормальне, але можна його уточнити, скориставшись цим https://discord.com/channels/534496884849639455/862735944679424020/864019560587591700-->
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/user_info"
             android:layout_width="wrap_content"
@@ -34,6 +37,7 @@
 
         </androidx.constraintlayout.helper.widget.Flow>
 
+<!--        TODO бажано натискати ctrl+alt+l, бо у випадку форматування xml макетів, це форматування ще і порядок атрибутів сортує.-->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/setting"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,6 +51,7 @@
 
         </androidx.appcompat.widget.AppCompatTextView>
 
+<!--        TODO я думаю, що у дизайні шрифт semi_bold, а не regular, хоча використання шрифтів є, тому ви вже знаєте, як можна його змінити-->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
@@ -80,6 +85,7 @@
         </androidx.appcompat.widget.AppCompatTextView>
 
 
+<!--        TODO Трохи не по дизайну, нема проміжку між зображенням і текстом "Settings"-->
         <androidx.cardview.widget.CardView
             android:id="@+id/user_photo"
             android:layout_width="@dimen/avatar_size"
@@ -110,6 +116,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
+<!--        TODO Можливо, тут теж шрифт має бути semi_bold-->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
             style="@style/button_basic"
@@ -124,6 +131,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
 
+<!--        TODO Можливо, тут теж шрифт має бути semi_bold-->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary"
@@ -149,6 +157,7 @@
             android:src="@drawable/image_view_fb"
             tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
+<!--        TODO зайві атрибути tools:layout_editor_absolute-->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
@@ -160,6 +169,7 @@
             tools:layout_editor_absoluteX="176dp"
             tools:layout_editor_absoluteY="93dp" />
 
+<!--        TODO зайві атрибути tools:layout_editor_absolute-->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonLinkedIn"
             android:layout_width="wrap_content"

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--TODO розмітка макету може сповзати, в залежності від dpi екрану-->
+<!--TODO я б елементи розміщав по порядку їх появи на екрані, зліва на право, зверху вниз-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +9,9 @@
     android:background="@color/primary_background_color"
     tools:context=".AuthActivity">
 
+<!--    TODO text має бути register, бо це екран sign up (у екрану log in нема google кнопки)-->
+<!--    TODO onClick, можливо, краще замінити на onClickListener у коді activity-->
+<!--    TODO можливо, стиль шрифту теж semi_bold, а не regular-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         style="@style/button_login_register"
@@ -97,6 +102,7 @@
 
     </androidx.appcompat.widget.AppCompatTextView>
 
+<!--    TODO згідно дизайну, підказка має бути завжди зверху-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordContainer"
         style="@style/TextInputEditLayout"
@@ -121,6 +127,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+<!--    TODO згідно дизайну, підказка має бути завжди зверху-->
+<!--    TODO Не виконано умову "Впевніться, що при зміні теми (через шторку) не скидається інпут імейла і пароля"-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/eMailContainer"
         style="@style/TextInputEditLayout"
@@ -154,6 +162,7 @@
 
     </androidx.constraintlayout.helper.widget.Flow>
 
+<!--    TODO зображення checkbox не по дизайну-->
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkBox"
         style="@style/CheckBox"
@@ -178,6 +187,7 @@
 
     </androidx.appcompat.widget.AppCompatTextView>
 
+<!--    TODO текст дуже високо, у порівнянні з дизайном-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/acquaintance"
         style="@style/TextView"

@@ -10,6 +10,7 @@
         <item name="android:textColor">@color/primary_text_color</item>
     </style>
 
+<!--    TODO розмір вказано не через посилання-->
     <style name="Text.Primary.LabelLarge">
         <item name="android:textSize">18sp</item>
     </style>

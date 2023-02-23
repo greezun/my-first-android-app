@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class LoginData(context: Context) {
+    //TODO літерали у константи.
     private val dataStore = context.createDataStore("userLogin")
 
     companion object {
