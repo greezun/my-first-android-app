@@ -9,8 +9,8 @@
     android:background="@color/primary_background_color"
     tools:context=".AuthActivity">
 
-<!--    TODO text має бути register, бо це екран sign up (у екрану log in нема google кнопки)-->
-<!--    TODO onClick, можливо, краще замінити на onClickListener у коді activity-->
+<!--    TODO text має бути register, бо це екран sign up (у екрану log in нема google кнопки)(done)-->
+<!--    TODO onClick, можливо, краще замінити на onClickListener у коді activity(done)-->
 <!--    TODO можливо, стиль шрифту теж semi_bold, а не regular-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
@@ -18,8 +18,8 @@
         android:layout_marginStart="@dimen/margin_mid"
         android:layout_marginEnd="@dimen/margin_mid"
         android:layout_marginBottom="@dimen/margin_mid"
-        android:onClick="onClickGoMine"
-        android:text="@string/login"
+        android:onClick="onClickListener"
+        android:text="@string/register"
         app:layout_constraintBottom_toTopOf="@id/invitationToRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         style="@style/button_google"
         android:layout_marginStart="@dimen/margin_mid"
         android:layout_marginEnd="@dimen/margin_mid"
-        android:layout_marginBottom="@dimen/margin_mid"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/or"
         style="@style/TextView"
-        android:layout_marginBottom="@dimen/margin_mid"
+        android:layout_marginBottom="8dp"
         android:text="@string/or"
         android:textAppearance="@style/Text.Primary.HeadlineSmall"
         app:layout_constraintBottom_toTopOf="@id/login"
@@ -106,12 +106,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordContainer"
         style="@style/TextInputEditLayout"
-        android:layout_marginHorizontal="@dimen/margin_mid"
-        android:gravity="center"
+
         android:hint="@string/password"
-        app:counterEnabled="true"
-        app:counterMaxLength="@integer/passwordLength"
-        app:counterTextColor = "@color/outline_custom_color"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/outline_custom_color"
         tools:ignore="MissingConstraints">
@@ -119,6 +115,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordField"
             style="@style/TextInputEditText"
+            android:layout_marginStart="@dimen/margin_mid"
+            android:layout_marginEnd="@dimen/margin_mid"
             android:background="@color/primary_background_color"
             android:inputType="textPassword"
             android:maxLength="@integer/passwordLength"
@@ -132,7 +130,6 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/eMailContainer"
         style="@style/TextInputEditLayout"
-        android:layout_marginHorizontal="@dimen/margin_mid"
         android:gravity="center"
         tools:ignore="MissingConstraints">
 
@@ -141,6 +138,9 @@
             style="@style/TextInputEditText"
             android:background="@color/primary_background_color"
             android:hint="@string/e_mail"
+            android:layout_marginStart="@dimen/margin_mid"
+            android:layout_marginEnd="@dimen/margin_mid"
+            app:expandedHintEnabled = "false"
             android:inputType="textEmailAddress"
             tools:ignore="VisualLintTextFieldSize,TextSizeCheck" />
 
@@ -150,30 +150,26 @@
         android:id="@+id/field_block"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_mid"
-        android:layout_marginEnd="@dimen/margin_mid"
+        android:layout_marginTop="24dp"
         android:orientation="vertical"
         app:constraint_referenced_ids="eMailContainer, passwordContainer"
-        app:flow_verticalGap="@dimen/margin_min"
-        app:layout_constraintBottom_toTopOf="@id/button_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/fill_profile">
 
     </androidx.constraintlayout.helper.widget.Flow>
 
 <!--    TODO зображення checkbox не по дизайну-->
-    <androidx.appcompat.widget.AppCompatCheckBox
+    <CheckBox
         android:id="@+id/checkBox"
         style="@style/CheckBox"
-        android:layout_marginStart="@dimen/margin_mid"
-        android:backgroundTintMode="multiply"
-        android:checked="true"
+        android:checked="false"
+        android:layout_marginStart="@dimen/margin_min"
         android:text="@string/remember_me"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordContainer">
 
-    </androidx.appcompat.widget.AppCompatCheckBox>
+    </CheckBox>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fill_profile"
@@ -191,9 +187,9 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/acquaintance"
         style="@style/TextView"
+        android:layout_marginTop="146dp"
         android:text="@string/acquaintance"
         android:textAppearance="@style/Text.Primary.HeadlineSmall"
-        app:layout_constraintBottom_toTopOf="@id/field_block"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

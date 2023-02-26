@@ -1,11 +1,10 @@
 package com.example.myapplication20
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+
 import android.util.Patterns
-import android.view.View
+
 import androidx.lifecycle.asLiveData
 import com.example.myapplication20.databinding.ActivityAuthBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -20,7 +19,6 @@ private const val s = "key"
 class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::inflate) {
 
     private lateinit var loginData: LoginData
-//    private lateinit var binding: ActivityAuthBinding
     private lateinit var eMail: TextInputEditText
     private lateinit var coroutineScope: CoroutineScope
     private lateinit var intent: Intent
@@ -29,20 +27,19 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
         super.onCreate(savedInstanceState)
         coroutineScope = CoroutineScope(Job())
         loginData = LoginData(this)
-//        binding = ActivityAuthBinding.inflate(layoutInflater)
         observeData()
-//        setContentView(binding.root)
-//        TODO далі встановлюються два слухачі. Ці дії можна винести у метод setListeners() і тримати усі слухачі у ньому.
-        emailFocusListener()
-        passwordFocusListener()
-        autoLogIn()
+//        TODO далі встановлюються два слухачі. Ці дії можна винести у метод setListeners() і тримати усі слухачі у ньому.(done)
+        setListeners()
 
     }
 
-    private fun autoLogIn() {
+    override fun setListeners() {
+        emailFocusListener()
+        passwordFocusListener()
+        onClickListener()
+    }
 
-        Log.i("myLog", "start autologin")
-        Log.i("myLog", "isValid - ${isValid()}")
+    private fun autoLogIn() {
         if (isValid()) {
             intentInit()
             goNextActivity()
@@ -126,18 +123,20 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
     private fun isValid(): Boolean {
         binding.eMailContainer.helperText = validEmail()
         binding.passwordContainer.helperText = validPassword()
-
         val validEmail = binding.eMailContainer.helperText == null
         val validPassword = binding.passwordContainer.helperText == null
         return validEmail && validPassword
     }
 
-    // TODO можна замінити на onClickListener
-    fun onClickGoMine(view: View) {
-        intentInit()
-        if (isValid()) {
-            goNextActivity()
-            if (binding.checkBox.isChecked) saveLoginData()
+    // TODO можна замінити на onClickListener (done)
+    fun onClickListener() {
+        binding.login.setOnClickListener {
+            if (isValid()) {
+                intentInit()
+                if (binding.checkBox.isChecked){ saveLoginData()}
+                goNextActivity()
+
+            }
         }
     }
 

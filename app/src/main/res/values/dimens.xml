@@ -7,4 +7,5 @@
     <dimen name="margin_max">32dp</dimen>
     <dimen name="avatar_size">113dp</dimen>
     <dimen name="main_avatar_radius">360dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
 </resources>

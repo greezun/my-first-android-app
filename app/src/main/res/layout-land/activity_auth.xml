@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/margin_mid"
         android:layout_marginEnd="@dimen/margin_mid"
 
-        android:onClick="onClickGoMine"
+        android:onClick="onClickListener"
         android:text="@string/login"
         app:layout_constraintBottom_toTopOf="@id/invitationToRegister"
         app:layout_constraintEnd_toEndOf="parent"
