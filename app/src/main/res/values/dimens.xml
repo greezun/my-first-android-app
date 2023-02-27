@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_mid">16dp</dimen>
-    <dimen name="margin_min">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
     <dimen name="button_height_standard">55dp</dimen>
     <dimen name="button_height_auxiliary">40dp</dimen>
     <dimen name="margin_max">32dp</dimen>
     <dimen name="avatar_size">113dp</dimen>
     <dimen name="main_avatar_radius">360dp</dimen>
     <dimen name="corner_radius">4dp</dimen>
+
+<!--    Text size   -->
+
+    <dimen name="textLabelLargeSize">18sp</dimen>
+    <dimen name="textServiceNormalSize">14sp</dimen>
+    <dimen name="textServiceSmallSize">12sp</dimen>
+    <dimen name="textButtonSize">18sp</dimen>
+    <dimen name="textBasicButtonSize">16sp</dimen>
+    <dimen name="authActivityTopMargin">146dp</dimen>
+    <dimen name="marginBigest">54dp</dimen>
 </resources>

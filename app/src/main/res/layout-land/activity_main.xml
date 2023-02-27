@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/primary_background_color"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,8 +23,8 @@
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginTop="@dimen/margin_mid"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
             android:text="@string/setting"
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,21 +97,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout_bottom"
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
             style="@style/button_basic"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_min"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small"
             android:background="@drawable/button_basic"
             android:text="@string/view_my_con"
             android:textAppearance="@style/Text.Primary.ButtonText"
@@ -123,9 +123,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_mid"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
             android:textColor="@color/auxiliary_button_text_color"

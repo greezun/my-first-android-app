@@ -2,5 +2,5 @@
 <selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:name="android:layout_width" tools:ignore="ExtraText">0dp</item>
     <item android:name="android:layout_height">@dimen/button_height_standard</item>
-    <item android:name="android:background">@drawable/background_button_basic</item>
+    <item android:name="android:background" tools:ignore="StateListReachable">@drawable/background_button_basic</item>
 </selector>

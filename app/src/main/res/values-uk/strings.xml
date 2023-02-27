@@ -20,5 +20,9 @@
     <string name="is_have_account">Вже є аккаунт?</string>
     <string name="sign_in">Увійти</string>
     <string name="required">Вимагається</string>
-    <string name="checkEmailError">Invalid Email Address</string>
+    <string name="checkEmailError">Не вірний емейл</string>
+    <string name="checkPassword.NumberOfCharacters">Мінімальна довжина паролю 8 символів</string>
+    <string name="checkPassword.UpperCase">Повинен містити 1 велику літеру</string>
+    <string name="checkPassword.LowerCase">Повинен містити 1 маленьку літеру</string>
+    <string name="checkPassword.SpecialCharacteers">Повинен містити 1 спеціальний символ (@#$%^&amp;+=)</string>
 </resources>

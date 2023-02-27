@@ -1,5 +1,6 @@
 package com.example.myapplication20
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 
@@ -12,10 +13,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-private const val s = "key"
+private const val KEY_INTENT = "userData"
 
-//TODO не виконано (або виконано. Скоріше всього, що виконано) опрацювання checkbox "Запам'ятати данні": не важливо від стану, поведінка не змінюється
-//TODO можна не показувати текст помилки про email і password, якщо їх ще не починали вводити.
 class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::inflate) {
 
     private lateinit var loginData: LoginData
@@ -28,9 +27,7 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
         coroutineScope = CoroutineScope(Job())
         loginData = LoginData(this)
         observeData()
-//        TODO далі встановлюються два слухачі. Ці дії можна винести у метод setListeners() і тримати усі слухачі у ньому.(done)
         setListeners()
-
     }
 
     override fun setListeners() {
@@ -40,7 +37,7 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
     }
 
     private fun autoLogIn() {
-        if (isValid()) {
+        if (isFieldsValid()) {
             intentInit()
             goNextActivity()
         }
@@ -55,22 +52,23 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
         eMail = binding.eMailField
         intent = Intent(this, MainActivity::class.java)
             .apply {
-                putExtra("key", eMail.text.toString()) // TODO ключ у константи
+                putExtra(KEY_INTENT, eMail.text.toString())
             }
     }
 
 
     private fun observeData() {
-        loginData.loginFlow.asLiveData().observe(this, {
-            binding.eMailField.setText(it.toString())
-        })
-
-        loginData.passwordFlow.asLiveData().observe(this, {
-            binding.passwordField.setText(it.toString())
-        })
-
         loginData.autoLoginFlow.asLiveData().observe(this, {
-            if (it) autoLogIn()
+            if (it) {
+                loginData.loginFlow.asLiveData().observe(this, {
+                    binding.eMailField.setText(it.toString())
+                })
+
+                loginData.passwordFlow.asLiveData().observe(this, {
+                    binding.passwordField.setText(it.toString())
+                })
+                autoLogIn()
+            }
         })
     }
 
@@ -86,7 +84,6 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
     private fun validEmail(): String? {
         val emailText = binding.eMailField.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
-//            return "Invalid Email Address" //TODO винести у ресурси
             return getString(R.string.checkEmailError)
         }
         return null
@@ -100,27 +97,25 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
         }
     }
 
+    @SuppressLint("ResourceType")
     private fun validPassword(): String? {
-        // TODO стрічкові літерали у ресурси
-        // TODO патерни regex'ів у константи
         val passwordText = binding.passwordField.text.toString()
-        if (passwordText.length < 8) {
-            return "Minimum 8 Character Password"
+        if (passwordText.length < getString(R.integer.passwordMinLength).toInt()) {
+            return getString(R.string.checkPassword_NumberOfCharacters)
         }
-        if (!passwordText.matches(".*[A-Z].*".toRegex())) {
-            return "Must Contain 1 Upper-case Character"
+        if (!passwordText.matches(getString(R.string.regex_upper_case).toRegex())) {
+            return getString(R.string.checkPassword_UpperCase)
         }
-        if (!passwordText.matches(".*[a-z].*".toRegex())) {
-            return "Must Contain 1 Lower-case Character"
+        if (!passwordText.matches(getString(R.string.regex_lower_case).toRegex())) {
+            return getString(R.string.checkPassword_LowerCase)
         }
-        if (!passwordText.matches(".*[@#\$%^&+=].*".toRegex())) {
-            return "Must Contain 1 Special Character (@#\$%^&+=)"
+        if (!passwordText.matches(getString(R.string.regex_special_symbol).toRegex())) {
+            return getString(R.string.checkPassword_SpecialCharacteers)
         }
-
         return null
     }
 
-    private fun isValid(): Boolean {
+    private fun isFieldsValid(): Boolean {
         binding.eMailContainer.helperText = validEmail()
         binding.passwordContainer.helperText = validPassword()
         val validEmail = binding.eMailContainer.helperText == null
@@ -128,12 +123,11 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
         return validEmail && validPassword
     }
 
-    // TODO можна замінити на onClickListener (done)
     fun onClickListener() {
         binding.login.setOnClickListener {
-            if (isValid()) {
+            if (isFieldsValid()) {
                 intentInit()
-                if (binding.checkBox.isChecked){ saveLoginData()}
+                saveLoginData()
                 goNextActivity()
 
             }
@@ -141,12 +135,14 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(ActivityAuthBinding::infl
     }
 
     private fun saveLoginData() {
-        val login = binding.eMailField.text.toString()
-        val password = binding.passwordField.text.toString()
-        val isAutoLogin = true
+        if (binding.checkBox.isChecked) {
+            val login = binding.eMailField.text.toString()
+            val password = binding.passwordField.text.toString()
+            val isAutoLogin = true
 
-        coroutineScope.launch {
-            loginData.storeLoginData(login, password, isAutoLogin)
+            coroutineScope.launch {
+                loginData.storeLoginData(login, password, isAutoLogin)
+            }
         }
     }
 }

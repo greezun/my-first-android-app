@@ -7,14 +7,19 @@ import androidx.datastore.preferences.preferencesKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+private const val USER_LOGIN = "USER_LOGIN"
+private const val USER_PASSWORD ="USER_PASSWORD"
+private const val AUTOLOGIN ="AUTOLOGIN"
+private const val DATA_STORE_NAME = "userLogin"
+
 class LoginData(context: Context) {
-    //TODO літерали у константи.
-    private val dataStore = context.createDataStore("userLogin")
+
+    private val dataStore = context.createDataStore(DATA_STORE_NAME)
 
     companion object {
-        val USER_LOGIN_KEY = preferencesKey<String>("USER_LOGIN")
-        val USER_PASSWORD_KEY = preferencesKey<String>("USER_PASSWORD")
-        val AUTOLOGIN_KEY = preferencesKey<Boolean>("AUTOLOGIN")
+        val USER_LOGIN_KEY = preferencesKey<String>(USER_LOGIN)
+        val USER_PASSWORD_KEY = preferencesKey<String>(USER_PASSWORD)
+        val AUTOLOGIN_KEY = preferencesKey<Boolean>(AUTOLOGIN)
     }
 
     suspend fun storeLoginData(login: String, password: String, isAutologin: Boolean) {

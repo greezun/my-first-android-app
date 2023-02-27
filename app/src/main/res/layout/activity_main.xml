@@ -6,123 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    TODO id краще перейменувати, бо зараз назва без сенсового навантаження (русс.: смысловая нагрузка)-->
-<!--    TODO схоже, що layout_constraintHeight_percent="0.5" ні на що не впливає. Можна подивитись на це повідомлення, як альтернативний варіант https://discord.com/channels/534496884849639455/862735944679424020/872180183724085268-->
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/primary_background_color"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.5">
 
-<!--        TODO id в цілому нормальне, але можна його уточнити, скориставшись цим https://discord.com/channels/534496884849639455/862735944679424020/864019560587591700-->
-        <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/user_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:constraint_referenced_ids=" userName, career, address"
-            app:flow_horizontalGap="@dimen/margin_min"
-            app:flow_verticalGap="@dimen/margin_min"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/user_photo"
+        <!--        TODO id в цілому нормальне, але можна його уточнити, скориставшись цим https://discord.com/channels/534496884849639455/862735944679424020/864019560587591700-->
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-
-        </androidx.constraintlayout.helper.widget.Flow>
-
-<!--        TODO бажано натискати ctrl+alt+l, бо у випадку форматування xml макетів, це форматування ще і порядок атрибутів сортує.-->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/setting"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
             android:text="@string/setting"
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginTop="@dimen/margin_mid">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        </androidx.appcompat.widget.AppCompatTextView>
 
-<!--        TODO я думаю, що у дизайні шрифт semi_bold, а не regular, хоча використання шрифтів є, тому ви вже знаєте, як можна його змінити-->
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
             android:text="@string/user_name"
             android:textAppearance="@style/Text.Primary.LabelLarge"
+            app:layout_constraintBottom_toTopOf="@+id/career"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
-            tools:ignore="MissingConstraints">
 
-        </androidx.appcompat.widget.AppCompatTextView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/career"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/career"
             android:textAppearance="@style/Text.Secondary.ServiceText"
+            app:layout_constraintBottom_toTopOf="@+id/address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
-            tools:ignore="MissingConstraints">
 
-        </androidx.appcompat.widget.AppCompatTextView>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_max"
+            android:layout_marginBottom="@dimen/marginBigest"
             android:text="@string/User_address"
             android:textAppearance="@style/Text.Secondary.ServiceText"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
-        </androidx.appcompat.widget.AppCompatTextView>
-
-
-<!--        TODO Трохи не по дизайну, нема проміжку між зображенням і текстом "Settings"-->
         <androidx.cardview.widget.CardView
             android:id="@+id/user_photo"
             android:layout_width="@dimen/avatar_size"
             android:layout_height="@dimen/avatar_size"
             app:cardCornerRadius="@dimen/main_avatar_radius"
-            tools:ignore="MissingConstraints"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:layout_constraintBottom_toTopOf="@id/userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/user_info">
+            tools:ignore="MissingConstraints">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/picture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/avatar"
-                />
+                android:src="@drawable/avatar" />
         </androidx.cardview.widget.CardView>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout_bottom"
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_weight="0.5">
 
-<!--        TODO Можливо, тут теж шрифт має бути semi_bold-->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
             style="@style/button_basic"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_min"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small"
             android:background="@drawable/button_basic"
             android:text="@string/view_my_con"
             android:textAppearance="@style/Text.Primary.ButtonText"
@@ -131,22 +119,20 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
 
-<!--        TODO Можливо, тут теж шрифт має бути semi_bold-->
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_mid"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
             android:textColor="@color/auxiliary_button_text_color"
             app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize">
-
-        </androidx.appcompat.widget.AppCompatButton>
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonFB"
@@ -157,7 +143,7 @@
             android:src="@drawable/image_view_fb"
             tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
-<!--        TODO зайві атрибути tools:layout_editor_absolute-->
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
@@ -165,11 +151,9 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/image_view_insta"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="93dp" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
-<!--        TODO зайві атрибути tools:layout_editor_absolute-->
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonLinkedIn"
             android:layout_width="wrap_content"
@@ -177,9 +161,7 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/image_view_linked_in"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="268dp"
-            tools:layout_editor_absoluteY="93dp" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"/>
 
 
         <androidx.constraintlayout.helper.widget.Flow

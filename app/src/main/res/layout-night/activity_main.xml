@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/abstract_blue_painting"
@@ -25,8 +25,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:constraint_referenced_ids=" userName, career, address"
-            app:flow_horizontalGap="@dimen/margin_min"
-            app:flow_verticalGap="@dimen/margin_min"
+            app:flow_horizontalGap="@dimen/margin_small"
+            app:flow_verticalGap="@dimen/margin_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/user_photo"
 
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:text="@string/setting"
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginTop="@dimen/margin_mid">
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal">
 
         </androidx.appcompat.widget.AppCompatTextView>
 
@@ -104,9 +104,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
             style="@style/button_basic"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_min"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small"
             android:background="@drawable/button_basic"
             android:text="@string/view_my_con"
             android:textAppearance="@style/Text.Primary.ButtonText"
@@ -118,9 +118,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit"
             style="@style/button_auxiliary_night"
-            android:layout_marginStart="@dimen/margin_mid"
-            android:layout_marginEnd="@dimen/margin_mid"
-            android:layout_marginBottom="@dimen/margin_mid"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
             app:layout_constraintBottom_toTopOf="@id/button_view_my_con"

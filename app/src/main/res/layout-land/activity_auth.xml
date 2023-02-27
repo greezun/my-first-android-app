@@ -11,8 +11,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         style="@style/button_login_register"
-        android:layout_marginStart="@dimen/margin_mid"
-        android:layout_marginEnd="@dimen/margin_mid"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
 
         android:onClick="onClickListener"
         android:text="@string/login"
@@ -65,10 +65,10 @@
         android:id="@+id/enter_block"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_mid"
-        android:layout_marginBottom="@dimen/margin_min"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_small"
         app:constraint_referenced_ids="have_account, signIn"
-        app:flow_horizontalGap="@dimen/margin_mid"
+        app:flow_horizontalGap="@dimen/margin_normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,9 +81,9 @@
         android:id="@+id/button_google"
         style="@style/button_google"
         android:layout_height="48dp"
-        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginStart="@dimen/margin_normal"
 
-        android:layout_marginEnd="@dimen/margin_mid"
+        android:layout_marginEnd="@dimen/margin_normal"
         app:layout_constraintBottom_toTopOf="@id/or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordContainer"
         style="@style/TextInputEditLayout"
-        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:layout_marginHorizontal="@dimen/margin_normal"
         android:gravity="center"
         android:hint="@string/password"
         app:counterMaxLength="16"
@@ -130,7 +130,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/eMailContainer"
         style="@style/TextInputEditLayout"
-        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:layout_marginHorizontal="@dimen/margin_normal"
         android:gravity="center"
         tools:ignore="MissingConstraints">
 
@@ -148,11 +148,11 @@
         android:id="@+id/field_block"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_mid"
-        android:layout_marginEnd="@dimen/margin_mid"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
         android:orientation="vertical"
         app:constraint_referenced_ids="eMailContainer, passwordContainer"
-        app:flow_verticalGap="@dimen/margin_min"
+        app:flow_verticalGap="@dimen/margin_small"
         app:layout_constraintBottom_toTopOf="@id/button_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +163,7 @@
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkBox"
         style="@style/CheckBox"
-        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginStart="@dimen/margin_normal"
         android:backgroundTintMode="multiply"
         android:checked="true"
         android:text="@string/remember_me"
@@ -187,7 +187,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/acquaintance"
         style="@style/TextView"
-        android:layout_marginTop="@dimen/margin_min"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/acquaintance"
         android:textAppearance="@style/Text.Primary.HeadlineSmall"
         app:layout_constraintBottom_toTopOf="@id/field_block"
