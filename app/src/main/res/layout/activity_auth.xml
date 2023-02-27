@@ -18,7 +18,7 @@
         android:layout_marginStart="@dimen/margin_mid"
         android:layout_marginEnd="@dimen/margin_mid"
         android:layout_marginBottom="@dimen/margin_mid"
-        android:onClick="onClickListener"
+        
         android:text="@string/register"
         app:layout_constraintBottom_toTopOf="@id/invitationToRegister"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,7 +160,7 @@
     </androidx.constraintlayout.helper.widget.Flow>
 
 <!--    TODO зображення checkbox не по дизайну-->
-    <CheckBox
+    <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkBox"
         style="@style/CheckBox"
         android:checked="false"
@@ -169,7 +169,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordContainer">
 
-    </CheckBox>
+    </androidx.appcompat.widget.AppCompatCheckBox>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fill_profile"
