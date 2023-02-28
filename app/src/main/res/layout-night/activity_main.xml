@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO можливо, night style виконано не під дизайн, але чітких умов не було-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,99 +10,95 @@
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/abstract_blue_painting"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/secondary_color"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/user_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:constraint_referenced_ids=" userName, career, address"
-            app:flow_horizontalGap="@dimen/margin_small"
-            app:flow_verticalGap="@dimen/margin_small"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/user_photo"
-
-            app:layout_constraintBottom_toTopOf="@id/guideline"
-            app:layout_constraintEnd_toEndOf="parent">
-
-
-        </androidx.constraintlayout.helper.widget.Flow>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.5">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/setting"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
             android:text="@string/setting"
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_normal">
-
-        </androidx.appcompat.widget.AppCompatTextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
             android:text="@string/user_name"
             android:textAppearance="@style/Text.Primary.LabelLarge"
-
-            tools:ignore="MissingConstraints">
-
-        </androidx.appcompat.widget.AppCompatTextView>
+            app:layout_constraintBottom_toTopOf="@+id/career"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/career"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/career"
             android:textAppearance="@style/Text.Secondary.ServiceText"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintBottom_toTopOf="@+id/address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
-        </androidx.appcompat.widget.AppCompatTextView>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_max"
+            android:layout_marginBottom="@dimen/marginBigest"
             android:text="@string/User_address"
             android:textAppearance="@style/Text.Secondary.ServiceText"
-            tools:ignore="MissingConstraints">
-
-        </androidx.appcompat.widget.AppCompatTextView>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/user_photo"
             android:layout_width="@dimen/avatar_size"
             android:layout_height="@dimen/avatar_size"
-            app:cardCornerRadius="360dp"
-            tools:ignore="MissingConstraints"
+            app:cardCornerRadius="@dimen/main_avatar_radius"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:layout_constraintBottom_toTopOf="@id/userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/user_info">
+            tools:ignore="MissingConstraints">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/picture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/avatar"
-
-                />
+                android:src="@drawable/avatar" />
         </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/secondary_nidht_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_weight="0.5">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
-            style="@style/button_basic"
+            style="@style/buttonBasic"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_small"
@@ -113,23 +108,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="UsingOnClickInXml,TextSizeCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
+
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit"
-            style="@style/button_auxiliary_night"
+            android:id="@+id/buttonEdit"
+            style="@style/buttonAuxiliary.Night"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/edit"
             android:textAppearance="@style/Text.Secondary.ServiceText"
+            android:textColor="@color/on_secondary_color"
             app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
-            tools:ignore="TouchTargetSizeCheck">
-
-        </androidx.appcompat.widget.AppCompatButton>
+            tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonFB"
@@ -140,6 +134,7 @@
             android:src="@drawable/image_view_fb"
             tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonInsta"
             android:layout_width="wrap_content"
@@ -147,9 +142,8 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/image_view_insta"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="460dp" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/buttonLinkedIn"
@@ -158,9 +152,7 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/image_view_linked_in"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="268dp"
-            tools:layout_editor_absoluteY="460dp" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
 
         <androidx.constraintlayout.helper.widget.Flow
@@ -170,20 +162,12 @@
             app:constraint_referenced_ids="buttonFB, buttonInsta, buttonLinkedIn"
             app:flow_horizontalGap="@dimen/margin_max"
             app:flow_verticalGap="@dimen/margin_max"
-            app:layout_constraintBottom_toTopOf="@id/edit"
+            app:layout_constraintBottom_toTopOf="@id/buttonEdit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="367dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

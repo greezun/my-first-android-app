@@ -19,8 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="0.5">
 
-        <!--        TODO id в цілому нормальне, але можна його уточнити, скориставшись цим https://discord.com/channels/534496884849639455/862735944679424020/864019560587591700-->
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/setting"
             android:layout_width="wrap_content"
@@ -31,8 +29,6 @@
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userName"
@@ -46,8 +42,6 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"/>
 
-
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/career"
             android:layout_width="wrap_content"
@@ -59,8 +53,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"/>
-
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/address"
@@ -107,7 +99,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
-            style="@style/button_basic"
+            style="@style/buttonBasic"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_small"
@@ -121,8 +113,8 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit"
-            style="@style/button_auxiliary"
+            android:id="@+id/buttonEdit"
+            style="@style/buttonAuxiliary"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
@@ -171,7 +163,7 @@
             app:constraint_referenced_ids="buttonFB, buttonInsta, buttonLinkedIn"
             app:flow_horizontalGap="@dimen/margin_max"
             app:flow_verticalGap="@dimen/margin_max"
-            app:layout_constraintBottom_toTopOf="@id/edit"
+            app:layout_constraintBottom_toTopOf="@id/buttonEdit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

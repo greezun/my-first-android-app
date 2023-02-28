@@ -25,5 +25,6 @@
     <color name="white2">#FAFAFA</color>
     <color name="gray">#BDBDBD</color>
     <color name="red">#F44336</color>
+    <color name="secondary_nidht_color">#333030</color>
 
 </resources>

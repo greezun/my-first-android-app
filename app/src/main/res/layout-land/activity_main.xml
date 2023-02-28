@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO такі ж коментарі, як і до portrait орієнтації-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,32 +14,41 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
             android:text="@string/setting"
             android:textAppearance="@style/Text.Primary.HeadlineSmall"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        </androidx.appcompat.widget.AppCompatTextView>
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:textAppearance="@style/Text.Primary.LabelLarge"
             app:layout_constraintBottom_toTopOf="@id/career"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
 
             tools:ignore="MissingConstraints">
 
@@ -51,10 +59,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/career"
+            android:layout_marginBottom="@dimen/margin_small"
             android:textAppearance="@style/Text.Secondary.ServiceText"
-            app:layout_constraintBaseline_toTopOf="@id/address"
+            app:layout_constraintBottom_toTopOf="@id/address"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
             tools:ignore="MissingConstraints">
 
         </androidx.appcompat.widget.AppCompatTextView>
@@ -65,10 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_max"
             android:text="@string/User_address"
+            android:layout_marginBottom="@dimen/margin_large"
             android:textAppearance="@style/Text.Secondary.ServiceText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
             tools:ignore="MissingConstraints">
 
         </androidx.appcompat.widget.AppCompatTextView>
@@ -79,20 +89,21 @@
             android:layout_width="@dimen/avatar_size"
             android:layout_height="@dimen/avatar_size"
             app:cardCornerRadius="360dp"
-            app:layout_constraintBottom_toTopOf="@id/userName"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="@dimen/margin_large"
             tools:ignore="MissingConstraints">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/picture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/avatar"
+                android:src="@drawable/avatar"/>
 
-                />
         </androidx.cardview.widget.CardView>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -108,7 +119,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_view_my_con"
-            style="@style/button_basic"
+            style="@style/buttonBasic"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_small"
@@ -121,8 +132,8 @@
             tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit"
-            style="@style/button_auxiliary"
+            android:id="@+id/buttonEdit"
+            style="@style/buttonAuxiliary"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
@@ -175,7 +186,7 @@
             app:constraint_referenced_ids="buttonFB, buttonInsta, buttonLinkedIn"
             app:flow_horizontalGap="@dimen/margin_max"
             app:flow_verticalGap="@dimen/margin_max"
-            app:layout_constraintBottom_toTopOf="@id/edit"
+            app:layout_constraintBottom_toTopOf="@id/buttonEdit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
