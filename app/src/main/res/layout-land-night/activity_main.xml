@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/secondary_color"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/setting"
+            android:textAppearance="@style/Text.Primary.HeadlineSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:textAppearance="@style/Text.Primary.LabelLarge"
+            app:layout_constraintBottom_toTopOf="@id/career"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            tools:ignore="MissingConstraints"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/career"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/career"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
+            app:layout_constraintBottom_toTopOf="@id/address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            tools:ignore="MissingConstraints"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_max"
+            android:text="@string/User_address"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            tools:ignore="MissingConstraints"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_photo"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            app:cardCornerRadius="360dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/margin_large"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatar"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:background="@color/secondary_nidht_color"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_view_my_con"
+            style="@style/buttonBasic"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:background="@drawable/button_basic"
+            android:text="@string/view_my_con"
+            android:textAppearance="@style/Text.Primary.ButtonText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonEdit"
+            style="@style/buttonAuxiliary.Night"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:text="@string/edit"
+            android:textAppearance="@style/Text.Secondary.ServiceText"
+            android:textColor="@color/on_secondary_color"
+            app:layout_constraintBottom_toTopOf="@id/button_view_my_con"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="VisualLintButtonSize,TouchTargetSizeCheck"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonFB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/image_view_fb"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonInsta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/image_view_insta"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="336dp"
+            tools:layout_editor_absoluteY="13dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonLinkedIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/image_view_linked_in"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="428dp"
+            tools:layout_editor_absoluteY="13dp" />
+
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="buttonFB, buttonInsta, buttonLinkedIn"
+            app:flow_horizontalGap="@dimen/margin_max"
+            app:flow_verticalGap="@dimen/margin_max"
+            app:layout_constraintBottom_toTopOf="@id/buttonEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
