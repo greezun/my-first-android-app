@@ -2,6 +2,8 @@
 <resources>
     <dimen name="margin_normal">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_mid">16dp</dimen>
+    <dimen name="margin_min">8dp</dimen>
     <dimen name="margin_large">24dp</dimen>
     <dimen name="button_height_standard">55dp</dimen>
     <dimen name="button_height_auxiliary">40dp</dimen>

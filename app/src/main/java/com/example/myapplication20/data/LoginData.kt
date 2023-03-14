@@ -1,4 +1,4 @@
-package com.example.myapplication20
+package com.example.myapplication20.data
 
 import android.content.Context
 import androidx.datastore.preferences.createDataStore

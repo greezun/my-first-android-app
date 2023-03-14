@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_background_color"
-    tools:context=".AuthActivity"
+    tools:context=".ui.AuthActivity"
     tools:ignore="MissingDefaultResource">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -86,17 +86,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordContainer"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_google"
-        style="@style/buttonGoogle"
+    <com.example.myapplication20.util.CustomButtonView
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/margin_normal"
         android:layout_marginEnd="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_small"
         app:layout_constraintBottom_toTopOf="@id/or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintButtonSize"/>
-
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/or"

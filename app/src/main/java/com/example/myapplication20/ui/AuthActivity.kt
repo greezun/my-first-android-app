@@ -1,4 +1,4 @@
-package com.example.myapplication20
+package com.example.myapplication20.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.util.Patterns
 
 import androidx.lifecycle.asLiveData
+import com.example.myapplication20.R
+import com.example.myapplication20.data.LoginData
 import com.example.myapplication20.databinding.ActivityAuthBinding
+import com.example.myapplication20.util.BaseActivity
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
